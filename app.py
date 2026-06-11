@@ -8,26 +8,35 @@ st.set_page_config(
     layout="wide"
 )
 
-# 2. Design System Avançado (CSS Customizado)
+# 2. Design System Avançado (CSS Customizado Corrigido)
 st.markdown("""
     <style>
     /* Reset e fontes */
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
     
-    /* Efeito de Gradiente Neon no Nome Principal */
+    /* Efeito de Gradiente Neon no Nome Principal com Espaçamento Corrigido */
     .title-gradient { 
         font-family: 'Outfit', sans-serif;
-        font-size: 56px; 
+        font-size: 42px; 
         font-weight: 900; 
         background: linear-gradient(90deg, #00d1ff 0%, #00ffaa 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        letter-spacing: -1.5px; 
+        letter-spacing: 0.5px; 
         margin-top: 15px;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
+        word-spacing: 3px;
     }
     
-    .age-badge { font-family: 'Outfit', sans-serif; font-size: 16px; color: #a0aec0; margin-bottom: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .age-badge { 
+        font-family: 'Outfit', sans-serif; 
+        font-size: 15px; 
+        color: #a0aec0; 
+        margin-bottom: 15px; 
+        font-weight: 700; 
+        letter-spacing: 1.5px; 
+        text-transform: uppercase; 
+    }
     .subtitle { font-size: 18px; color: #8892b0; margin-bottom: 20px; font-weight: 400; }
     .section-title { font-size: 28px; font-weight: 700; color: #ffffff; border-left: 5px solid #00d1ff; padding-left: 15px; margin-top: 25px; margin-bottom: 20px; }
     
@@ -59,16 +68,20 @@ st.markdown("""
         border-color: #00d1ff;
         background: rgba(0, 209, 255, 0.05);
     }
+    .destaque-arte { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
     </style>
 """, unsafe_allow_html=True)
 
 # --- CAPA DO SITE ---
+# Busca primeiro pela capa personalizada, depois tenta o arquivo da bandeira (neto.png)
 if os.path.exists("imagens/capa.png"):
     st.image("imagens/capa.png", use_container_width=True)
+elif os.path.exists("imagens/neto.png"):
+    st.image("imagens/neto.png", use_container_width=True)
 
-# Cabeçalho de Alto Impacto com Gradiente e Idade Atualizada
+# Cabeçalho Corrigido com Espaços Reais e Sem Caracteres Estranhos
 st.markdown('<p class="title-gradient">EDUARDO CÉSAR CABRAL BORGES</p>', unsafe_allow_html=True)
-st.markdown('<p class="age-badge">ブラジル • 22 ANOS</p>', unsafe_allow_html=True)
+st.markdown('<p class="age-badge">📍 TUPACIGUARA • MG &nbsp;|&nbsp; ⚡ 22 ANOS</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">🚀 Comunicação Pública Estratégica | 🎨 Identidade Visual, Branding Político e GenAI</p>', unsafe_allow_html=True)
 
 # --- LINKS DE CONTATO REAIS CONFIGURADOS ---
@@ -112,7 +125,7 @@ with aba_perfil:
         st.write("""
         Atuando na engrenagem interna do município, desenvolvi uma compreensão profunda de como a administração pública funciona. No entanto, minha verdadeira vocação e maior potencial de contribuição para a nossa cidade estão na **comunicação visual de alto impacto**.
         
-        Minha meta é consolidar minha atuação como <span class="highlight">Designer Gráfico oficial da Prefeitura</span>, aplicando técnica acadêmica, velocidade de execução e inteligência artificial para elevar o padrão das campanhas institucionais e do branding político do Gabinete.
+        Minha meta é consolidar minha atuação como <span class="highlight">Designer Gráfico oficial da Prefeitura</span>, aplicando técnica acadêmica, velocidade de execução e inteligência artificial para elevar o padrão das campahas institucionais e do branding político do Gabinete.
         """, unsafe_allow_html=True)
 
         st.markdown('<p class="section-title">Por que um Designer que conhece a Gestão Interna faz a diferença?</p>', unsafe_allow_html=True)
